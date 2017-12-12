@@ -1,0 +1,48 @@
+Project title - Mountain Running search engine.
+
+The Main assumption of the project: 
+Build online search website which gives users possibility to find the mountains running competition from all over the world. Users will be able to use filters to find interesting competition.
+
+The additional assumption of the project:
+1. Gives user possibility to add selected competition to his own calendar. Calendar will be saved in cookies.(feature)
+2. Gives user possibility to use this webside on mobile devices and desctop computers.
+
+
+Details information about project:
+
+Applied filters:
+- date - user selects time period;
+- country;
+- competition name;
+- price;
+- distance;
+- altitude;
+- category;
+- points;
+- localization of competition;
+
+Used technologies:
+- HTML5;
+- CSS3 (BEM methodology);
+- Javascript;
+- AngularJs;
+- MySQL;
+- PHP (silex);
+- Grunt; (new technology for me)
+- Git;
+- Unit Tests;
+
+Applied standards:
+- WCAG 2.0 (Web Content Accessibility Guidelines) - AA
+- W3C
+
+Working plan:
+- Create a diagram of the elements in the page structure;
+- Create HTML structure based on diagram structure;
+- Create CSS styles;
+- Create sample data in json format;
+- Add AngularJs to project;
+- Create database structure;
+- Add some data to database;
+- (Add functionality which helps adding data to database)
+- Create backend side;
