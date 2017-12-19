@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biegi Górskie</title>
+</head>
+<body>
+    <div class="web-wrap">
+	<header>
+            <div>
+                <h1>Biegi Górskie</h1>
+            </div>
+            <div>
+                <div>
+                    <label for="start_date">Przedział czasowy</label>
+                    <input>
+                    <input>
+                </div>
+                <div class="mr-filter-group">
+                    <label class="mr-filter-label" for="country">Kraj</label>	
+                    <select multiple="multiple" id="country" name="country">
+                        <option>Polska</option>
+                        <option>Austria</option>
+                        <option>Chorwacja</option>
+                        <option>Słowacja</option>
+                    </select>							
+                </div>
+                <div>
+                    <input type="submit" value="Szukaj">
+                    <button type="button" id="btn-more-filters">Więcej filtrów</button>
+                </div>
+            </div>
+        </header>
+        <div id="filters-advanced">
+                <div>
+                    <label for="c_name">Nazwa</label>
+                    <input type="text" id="c_name">
+                </div>
+                <div>
+                    <label for="c_price_min">Cena</label>
+                    <input type="text" id="c_price_min" placeholder="min">
+                    <input type="text" id="c_price_max" placeholder="max">
+                </div>
+                <div>
+                    <label for="c_distance_min">Dystans</label>
+                    <input type="text" id="c_distance_min" placeholder="min">
+                    <input type="text" id="c_distance_max" placeholder="max">
+                </div>
+                <div>
+                    <label for="c_altitude_min">Przewyższenie</label>
+                    <input type="text" id="c_altitude_min" placeholder="min">
+                    <input type="text" id="c_altitude_max" placeholder="max">
+                </div>
+                <div>
+                    <label for="category">Kategoria biegu</label>
+                    <select multiple="multiple" id="category" name="category">
+                        <option>Alpejski</option>
+                        <option>Anglosaski</option>
+                        <option>Długi</option>
+                        <option>Ultra</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="c_points_min">Punkty UTMB</label>
+                    <input type="text" id="c_points_min" placeholder="min">
+                    <input type="text" id="c_points_max" placeholder="max">
+                </div>
+                <div>
+                    <label for="c_points_min">Punkty BUGT</label>
+                    <input type="text" id="c_points_min" placeholder="min">
+                    <input type="text" id="c_points_max" placeholder="max">
+                </div>
+        </div>
+	<section class="c-container"></section>
+    </div>
+</body>
+</html>
