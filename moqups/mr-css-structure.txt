@@ -1,0 +1,223 @@
+	
+	
+	web-wrap
+		|
+		|
+		|-----> mr-filters
+		|	|
+		|	|
+		|	|
+		|	|-----> mr-header
+		|	|	|
+		|	|	|	
+		|	|	|-----> mr-logo
+		|	|	|
+		|	|	|
+		|	|	|-----> mr-filters-main
+		|	|		|
+		|	|		|
+		|	|		|
+		|	|		|-----> mr-filter-group
+		|	|		|	|
+		|	|		|	|
+		|	|		|	|-----> mr-filter-label
+		|	|		|	|
+		|	|		|	|
+		|	|		|	|-----> mr-filter
+		|	|		|	
+		|	|		|	
+		|	|		|
+		|	|		|-----> mr-filter-group
+		|	|		|	|
+		|	|		|	|
+		|	|		|	|-----> mr-filter-label
+		|	|		|
+		|	|		|	
+		|	|		|	
+		|	|		|-----> mr-button-group
+		|	|			|			
+		|	|			|
+		|	|			|-----> mr-button --> mr-button--submit 
+		|	|			|
+		|	|			|
+		|	|			|-----> mr-button
+		|	|
+		|	|
+		|	|
+		|	|-----> mr-filters-advanced
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|		
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|		
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|		
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|
+		|		|
+		|		|
+		|		|-----> mr-advanced-filter-group
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter-label
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|		|	|
+		|		|	|
+		|		|	|-----> mr-advanced-filter
+		|
+		|
+		|
+		|
+		|-----> c-container 
+			|
+			|
+			|-----> c-item
+				|
+				|
+				|
+				|-----> c-item__header
+				|
+				|
+				|
+				|-----> c-item__info
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__dots
+				|
+				|
+				|
+				|-----> c-item__info
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__dots
+				|
+				|
+				|
+				|-----> c-item__info
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__text
+				|	|
+				|	|
+				|	|-----> c-item__dots
+				|
+				|
+				|
+				|-----> c-item__info
+				|
+				|
+				|
+				|-----> c-item__info
+				|
+				|
+				|
+				|-----> c-item-button
+				|
+				|
+				|
+				|-----> c-item-details
+				|	|
+				|	|
+				|	|-----> c-item-details__info 
+				|	|
+				|	|
+				|	|-----> c-item-details__info 
+				|	|
+				|	|
+				|	|-----> c-item-details__info 
+				|	|
+				|	|
+				|	|-----> c-item-details__info 
+				|
+				|
+				|
+				|-----> c-item-button
+				|
+				|
+				|
+				|-----> c-item-button
+				|
+				|
+				|
+				|-----> c-item-button
+			
+				
+		
