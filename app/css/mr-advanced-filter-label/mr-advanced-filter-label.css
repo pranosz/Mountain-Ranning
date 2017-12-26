@@ -1,0 +1,9 @@
+.mr-advanced-filter-label {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #444444;
+	padding: 3px;
+}

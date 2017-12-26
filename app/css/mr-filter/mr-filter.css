@@ -1,0 +1,16 @@
+.mr-filter {
+	display: inline;
+	width: 130px;
+	height: 30px;
+	background: #033e98;
+	border: none;
+	color: #a8c6fa;
+	text-align: center;
+	padding: 0px;
+}
+
+@media screen and (max-width: 635px){
+	.mr-filter {
+		/*width: 70px;*/
+	}
+}

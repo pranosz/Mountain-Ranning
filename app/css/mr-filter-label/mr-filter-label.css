@@ -1,0 +1,37 @@
+.mr-filter-label {
+	display: inline;
+	height: 30px;
+	font-size: 1.4em;
+	color: #d8dfec;
+	margin-left: 10px;
+	padding: 3px;
+}
+
+@media screen and (min-width: 770px) and (max-width: 989px){
+	.mr-filter-label {
+		display: block;
+		height: 22px;
+		line-height: 20px;
+		margin-left: 0px;
+		padding: 0px;
+	}
+}
+
+@media screen and (min-width: 635px) and (max-width: 770px){
+	.mr-filter-label {
+		display: block;
+		height: 28px;
+		margin-left: 0px;
+		padding: 0px;
+	}
+}
+
+@media screen and (max-width: 635px){
+	.mr-filter-label {
+		display: block;
+		height: 24px;
+		margin-left: 0px;
+		padding: 0px;
+		padding-top: 5px;
+	}
+}

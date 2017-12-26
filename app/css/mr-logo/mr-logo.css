@@ -1,0 +1,16 @@
+.mr-logo {
+	width: 140px;
+	margin: 0px 10px;
+	line-height: 56px;
+	font-size: 1.6em;
+	font-weight: normal;
+	color: #ffffff;
+	float: left;
+}
+
+@media screen and (min-width: 770px) and (max-width: 989px){
+	.mr-logo {
+		width: 110px;
+		line-height: 82px;
+	}
+}

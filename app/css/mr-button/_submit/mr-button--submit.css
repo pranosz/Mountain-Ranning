@@ -1,0 +1,14 @@
+.mr-button--submit {
+	width: 90px;	
+  	background: #ff3823;
+}
+
+.mr-button--submit:hover {
+  background: #fb6556;
+}
+
+@media screen and (max-width: 635px){
+	.mr-button--submit {
+		width: 50%;
+	}
+}

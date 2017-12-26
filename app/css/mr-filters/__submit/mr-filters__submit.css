@@ -1,0 +1,14 @@
+.mr-filters__submit {
+  height: 30px;
+  font-size: 1.3em;
+  color: #fafafa;
+  background: #ff3823;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.mr-filters__submit:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}

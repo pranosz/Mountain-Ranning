@@ -1,0 +1,10 @@
+.mr-filters__date {
+	display: inline;
+	width: 80px;
+	height: 25px;
+	background: #75a9f9;
+	border: none;
+	color: #ffffff;
+	text-align: center;
+	padding: 0px;
+}

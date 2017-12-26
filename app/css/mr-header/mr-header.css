@@ -1,0 +1,15 @@
+.mr-header {
+	position: fixed;
+	width: 100%;
+	height: 56px;
+	background-color: #0c59cf;
+	box-shadow: 0 1px 12px -5px #cdcecd;
+	vertical-align: middle;
+	z-index: 5;
+}
+
+@media screen and (min-width: 770px) and (max-width: 989px){
+	.mr-header {
+		height: 82px;
+	}
+}

@@ -1,0 +1,11 @@
+
+.mr-button-group {
+	display: inline-block;
+	font-size: 0px;
+}
+
+@media screen and (max-width: 635px){
+	.mr-button-group {
+		width: 100%;
+	}
+}

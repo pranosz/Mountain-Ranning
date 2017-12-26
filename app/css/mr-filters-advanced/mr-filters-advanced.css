@@ -1,0 +1,31 @@
+.mr-filters-advanced {
+	display: block;
+	position: relative;
+	top: 56px;
+	width: 100%;
+	background-color: #d6d6d6;
+}
+
+@media screen and (min-width: 770px) and (max-width: 989px){
+	.mr-filters-advanced {
+		top: 82px;
+	}
+}
+
+@media screen and (min-width: 635px) and (max-width: 770px){
+	.mr-filters-advanced {
+		top: 130px;
+	}
+}
+
+@media screen and (min-width: 430px) and (max-width: 635px){
+	.mr-filters-advanced {
+		top: 166px;
+	}
+}
+
+@media screen and (max-width: 430px){
+	.mr-filters-advanced {
+		top: 242px;
+	}
+}

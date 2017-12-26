@@ -3,72 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Biegi Górskie</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Nunito|Quicksand" rel="stylesheet">
+    <link href="css/web-wrap/web-wrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-header/mr-header.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-logo/mr-logo.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters-main/mr-filters-main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters/__label/mr-filters__label.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters/__date/mr-filters__date.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters/__select/mr-filters__select.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters/__submit/mr-filters__submit.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filter/mr-filter.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filter-group/mr-filter-group.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filter-label/mr-filter-label.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-button-group/mr-button-group.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-button/mr-button.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-button/_submit/mr-button--submit.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-filters-advanced/mr-filters-advanced.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-button/_calendar/mr-button--calendar.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-advanced-filter-label/mr-advanced-filter-label.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-advanced-filter/mr-advanced-filter.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-advanced-filter-group/mr-advanced-filter-group.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-advanced-filter/_half-width/mr-advanced-filter--half-width.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mr-advanced-filter/_width-130/mr-advanced-filter--width-130.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div class="web-wrap">
-	<header>
-            <div>
-                <h1>Biegi Górskie</h1>
-            </div>
-            <div>
-                <div>
-                    <label for="start_date">Przedział czasowy</label>
-                    <input>
-                    <input>
+        <form action="" class="mr-filters">
+            <header class="mr-header">
+                <div class="mr-logo">
+                    <h1>Biegi Górskie</h1>
                 </div>
-                <div class="mr-filter-group">
-                    <label class="mr-filter-label" for="country">Kraj</label>	
-                    <select multiple="multiple" id="country" name="country">
-                        <option>Polska</option>
-                        <option>Austria</option>
-                        <option>Chorwacja</option>
-                        <option>Słowacja</option>
-                    </select>							
+                <div class="mr-filters-main">
+                    <div class="mr-filter-group">
+                        <label class="mr-filter-label" for="start_date">Przedział czasowy</label>
+                        <input class="mr-filter">
+                        <input class="mr-filter">
+                    </div>
+                    <div class="mr-filter-group">
+                        <label class="mr-filter-label" for="country">Kraj</label>	
+                        <select id="country" name="country">
+                            <option value="poland">Polska</option>
+                            <option value="austria">Austria</option>
+                            <option value="chorwacja">Chorwacja</option>
+                            <option value="słowacja">Słowacja</option>
+                        </select>							
+                    </div>
+                    <div class="mr-button-group">
+                        <input class="mr-button mr-button--submit" type="submit" value="Szukaj">
+                        <button class="mr-button" type="button" id="btn-more-filters">Więcej filtrów</button>
+                    </div>
                 </div>
-                <div>
-                    <input type="submit" value="Szukaj">
-                    <button type="button" id="btn-more-filters">Więcej filtrów</button>
+            </header>
+        </form>
+        <div id="filters-advanced" class="mr-filters-advanced">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_name">Nazwa</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="c_name">
                 </div>
-            </div>
-        </header>
-        <div id="filters-advanced">
-                <div>
-                    <label for="c_name">Nazwa</label>
-                    <input type="text" id="c_name">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_price_min">Cena</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_min" placeholder="min">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_max" placeholder="max">
                 </div>
-                <div>
-                    <label for="c_price_min">Cena</label>
-                    <input type="text" id="c_price_min" placeholder="min">
-                    <input type="text" id="c_price_max" placeholder="max">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_distance_min">Dystans</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_min" placeholder="min">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_max" placeholder="max">
                 </div>
-                <div>
-                    <label for="c_distance_min">Dystans</label>
-                    <input type="text" id="c_distance_min" placeholder="min">
-                    <input type="text" id="c_distance_max" placeholder="max">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_altitude_min">Przewyższenie</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_min" placeholder="min">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_max" placeholder="max">
                 </div>
-                <div>
-                    <label for="c_altitude_min">Przewyższenie</label>
-                    <input type="text" id="c_altitude_min" placeholder="min">
-                    <input type="text" id="c_altitude_max" placeholder="max">
-                </div>
-                <div>
-                    <label for="category">Kategoria biegu</label>
-                    <select multiple="multiple" id="category" name="category">
-                        <option>Alpejski</option>
-                        <option>Anglosaski</option>
-                        <option>Długi</option>
-                        <option>Ultra</option>
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
+                    <select id="category" name="category">
+                        <option value="alpejski">Alpejski</option>
+                        <option value="anglosaski">Anglosaski</option>
+                        <option value="długi">Długi</option>
+                        <option value="ultra">Ultra</option>
                     </select>
                 </div>
-                <div>
-                    <label for="c_points_min">Punkty UTMB</label>
-                    <input type="text" id="c_points_min" placeholder="min">
-                    <input type="text" id="c_points_max" placeholder="max">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_points_min">Punkty UTMB</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max">
                 </div>
-                <div>
-                    <label for="c_points_min">Punkty BUGT</label>
-                    <input type="text" id="c_points_min" placeholder="min">
-                    <input type="text" id="c_points_max" placeholder="max">
+                <div class="mr-advanced-filter-group">
+                    <label class="mr-advanced-filter-label" for="c_points_min">Punkty BUGT</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max">
                 </div>
         </div>
 	<section class="c-container"></section>

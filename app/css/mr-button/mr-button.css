@@ -1,0 +1,32 @@
+.mr-button {
+  height: 30px;
+  color: #fafafa;
+  background: #3d8af7;
+  margin-right: 2px;
+  padding: 0px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.mr-button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 635px) and (max-width: 770px){
+	.mr-button {
+	  	color: #fafafa;
+  		background: #75a9f9;
+	}
+	.mr-button:hover {
+	  	background: #a5c4f5;
+	}
+}
+
+@media screen and (max-width: 635px){
+	.mr-button {
+    display: inline-block;
+		width: 50%;
+    margin-right: 0px;
+	}
+}

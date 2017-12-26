@@ -1,0 +1,32 @@
+.mr-advanced-filter {
+	display: inline;
+	width: 70px;
+	height: 30px;
+	background: #f7f6f6;
+	border: none;
+	color: #c0c0c0;
+	text-align: center;
+	padding: 0px;
+}
+
+::-webkit-input-placeholder {
+	color: #c0c0c0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #c0c0c0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #c0c0c0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #c0c0c0;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #c0c0c0;
+}
+
+@media screen and (max-width: 635px){
+	.mr-advanced-filter {
+		width: 90%;
+	}
+}

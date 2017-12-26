@@ -1,0 +1,26 @@
+.mr-button--calendar {
+	position: absolute;
+	top: 14px;
+	right: 10px;
+}
+
+@media screen and (max-width: 920px){
+	.mr-button--calendar {
+		top: 36px;
+	}
+}
+
+@media screen and (min-width: 594px) and (max-width: 720px){
+	.mr-button--calendar {
+		top: 87px;
+	}
+}
+
+@media screen and (max-width: 593px){
+	.mr-button--calendar {
+		position: absolute;
+		top: 14px;
+		right: 10px;
+		width: initial;
+	}
+}

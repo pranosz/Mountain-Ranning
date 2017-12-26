@@ -1,0 +1,14 @@
+.mr-filters__label {
+	display: inline;
+	height: 25px;
+	font-size: 1.2em;
+	color: #d8dfec;
+	margin-left: 10px;
+	padding: 3px;
+}
+
+.mr-label-input-group {
+	width: 200px;
+	line-height: initial;
+	float: left;
+}
