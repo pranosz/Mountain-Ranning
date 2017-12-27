@@ -1,0 +1,26 @@
+.c-item {
+	position: relative;
+	width: 460px;
+	min-height: 72px;
+	margin: 5px auto;
+	padding: 10px 210px 10px 10px;
+	background-color: #ffffff;
+	box-shadow: 0 1px 2px 0px rgba(191, 190, 190, 0.9);
+	color: #5d5f5d;
+}
+
+@media screen and (min-width: 635px) and (max-width: 770px){
+	.c-item {
+		height: inherit;
+		padding-right: 70px;
+	}
+}
+
+@media screen and (max-width: 635px){
+	.c-item {
+		height: inherit;
+		width: auto;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}

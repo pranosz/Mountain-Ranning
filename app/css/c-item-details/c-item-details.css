@@ -1,0 +1,16 @@
+.c-item-details {
+	margin: 5px 0px 5px 10px;
+	padding-top: 10px;
+}
+
+@media screen and (min-width: 635px) and (max-width: 770px){
+	.c-item-details {
+		margin: 10px 0px 5px 10px;
+	}
+}
+
+@media screen and (max-width: 635px){
+	.c-item-details {
+		margin: 10px 0px 5px 10px;
+	}
+}

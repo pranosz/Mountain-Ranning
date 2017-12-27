@@ -1,0 +1,39 @@
+.c-item-button {
+	display: inline-block;
+	height: 24px;
+	background: transparent;
+	border: none;
+	border-left: 1px solid #dad9d9;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #929292;
+	cursor: pointer;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin: 5px 0px;
+	line-height: 24px;
+}
+
+.c-item-button:hover {
+	color: #000000;
+}
+
+@media screen and (max-width: 635px){
+	.c-item-button {
+		width: 100%;
+		height: inherit;
+		border-top: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		background: #ebebeb;
+		color: #444444;
+		text-align: center;
+		margin: 0px;
+		margin-top: -1px;
+		padding: 5px 0px;
+	}
+
+	.c-item-button:hover {
+		color: #000000;
+		background: #fbfafa;
+	}	
+}

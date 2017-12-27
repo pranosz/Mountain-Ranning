@@ -1,0 +1,11 @@
+.c-item-button--poz-absolute-3 {
+	position: absolute;
+	bottom: 0px;
+	right: 90px;
+}
+
+@media screen and (max-width: 635px){
+	.c-item-button--poz-absolute-3 {
+		position: static;
+	}	
+}

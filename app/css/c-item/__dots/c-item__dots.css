@@ -1,0 +1,5 @@
+.c-item__dots {
+	width: 100px;
+	background-color: red;
+	border-bottom: thick dotted #ff0000;
+}

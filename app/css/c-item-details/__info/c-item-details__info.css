@@ -1,0 +1,7 @@
+.c-item-details__info {
+	display: block;
+	min-width: 110px;
+	font-size: 1.2em;
+	margin: 10px 0px 5px 0px;
+	padding-top: 5px;
+}

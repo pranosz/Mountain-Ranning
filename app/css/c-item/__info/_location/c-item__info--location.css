@@ -1,0 +1,13 @@
+.c-item__info--location {
+	position: absolute;
+	top: 25px;
+	right: 0px;
+    font-size: 1.4em;
+    margin: 10px;    
+}
+
+@media screen and (max-width: 593px){
+	.c-item__info--location {
+		position: static;
+	}
+}
