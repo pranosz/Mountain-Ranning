@@ -1,4 +1,4 @@
 .c-item__text--right {
-	position: absolute;
-	right: 0px;
+	float: right;
+	margin-left: 4px;
 }
