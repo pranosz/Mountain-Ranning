@@ -5,6 +5,7 @@
     <title>Biegi Górskie</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Arimo|Nunito|Quicksand" rel="stylesheet">
+    <link href="components/jQuery-MultiSelect-master/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
     <link href="css/web-wrap/web-wrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-header/mr-header.css" rel="stylesheet" type="text/css"/>
@@ -52,6 +53,7 @@
     <link href="css/c-item/__dots/c-item__dots.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-advanced-filter/_width-130/mr-advanced-filter--width-130.css" rel="stylesheet" type="text/css"/>
     <script src="components/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="components/jQuery-MultiSelect-master/jquery.multiselect.js" type="text/javascript"></script>
     <script src="js/sample.js" type="text/javascript"></script>
 </head>
 <body>
@@ -69,11 +71,11 @@
                     </div>
                     <div class="mr-filter-group">
                         <label class="mr-filter-label" for="country">Kraj</label>	
-                        <select id="country" name="country">
-                            <option value="poland">Polska</option>
-                            <option value="austria">Austria</option>
-                            <option value="chorwacja">Chorwacja</option>
-                            <option value="słowacja">Słowacja</option>
+                        <select multiple="multiple" id="country" name="country">
+                            <option selected value="poland">Polska</option>
+                            <option selected value="austria">Austria</option>
+                            <option selected value="croatia">Chorwacja</option>
+                            <option selected value="slovakia">Słowacja</option>
                         </select>							
                     </div>
                     <div class="mr-button-group">
@@ -105,11 +107,11 @@
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
-                    <select id="category" name="category">
-                        <option value="alpejski">Alpejski</option>
-                        <option value="anglosaski">Anglosaski</option>
-                        <option value="długi">Długi</option>
-                        <option value="ultra">Ultra</option>
+                    <select multiple="multiple" id="category" name="category">
+                        <option selected value="alpejski">Alpejski</option>
+                        <option selected value="anglosaski">Anglosaski</option>
+                        <option selected value="długi">Długi</option>
+                        <option selected value="ultra">Ultra</option>
                     </select>
                 </div>
                 <div class="mr-advanced-filter-group">
