@@ -9,6 +9,7 @@
    /*
    * Multi select
    */
+   /*
     $('#country').multiselect({
         selectAll: true,
         minHeight: null,
@@ -26,6 +27,6 @@
             placeholder: 'Select Category',
             search     : 'Search States'
         }
-    });
+    });*/
 
 });
