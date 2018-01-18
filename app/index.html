@@ -5,7 +5,6 @@
     <title>Biegi Górskie</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Arimo|Nunito|Quicksand" rel="stylesheet">
-    <link href="components/jQuery-MultiSelect-master/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
     <link href="css/web-wrap/web-wrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-header/mr-header.css" rel="stylesheet" type="text/css"/>
@@ -52,11 +51,12 @@
     <link href="css/c-item/__text/_right/c-item__text--right.css" rel="stylesheet" type="text/css"/>
     <link href="css/c-item/__dots/c-item__dots.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-advanced-filter/_width-130/mr-advanced-filter--width-130.css" rel="stylesheet" type="text/css"/>
+    <link href="components/jQuery-MultiSelect-master/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
     <script src="components/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="components/jQuery-MultiSelect-master/jquery.multiselect.js" type="text/javascript"></script>
     <script src="components/angular.min.js" type="text/javascript"></script>
     <script src="js/mountainRunning.js" type="text/javascript"></script>
     <script src="controllers/mainPageController.js" type="text/javascript"></script>
+    <script src="components/jQuery-MultiSelect-master/jquery.multiselect.js" type="text/javascript"></script>
     <script src="js/sample.js" type="text/javascript"></script>
 </head>
 <body ng-app="mountainRunning" ng-controller="mainPageCtrl">
@@ -83,12 +83,11 @@
                     </div>
                     <div class="mr-button-group">
                         <input class="mr-button mr-button--submit" type="submit" value="Szukaj">
-                        <button class="mr-button" type="button" id="btn-more-filters">Więcej filtrów</button>
+                        <button type="button" ng-click="showFilters()" id="btn-more-filters" class="mr-button">Więcej filtrów</button>
                     </div>
                 </div>
             </header>
-        </form>
-        <div id="filters-advanced" class="mr-filters-advanced">
+            <div id="filters-advanced" ng-show="toggle" class="mr-filters-advanced">
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_name">Nazwa</label>
                     <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="c_name">
@@ -110,11 +109,11 @@
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
-                    <select multiple="multiple" id="category" name="category">
-                        <option selected value="alpejski">Alpejski</option>
-                        <option selected value="anglosaski">Anglosaski</option>
-                        <option selected value="długi">Długi</option>
-                        <option selected value="ultra">Ultra</option>
+                    <select multiple="multiple" type="text" id="category" name="category" data-ng-model="selectCategory">
+                            <option selected value="alpejski">Alpejski</option>
+                            <option selected value="anglosaski">Anglosaski</option>
+                            <option selected value="długi">Długi</option>
+                            <option selected value="ultra">Ultra</option>
                     </select>
                 </div>
                 <div class="mr-advanced-filter-group">
@@ -127,57 +126,58 @@
                     <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min">
                     <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max">
                 </div>
-        </div>
+            </div>
+        </form>
         <section class="c-container">
-            <div class="c-item">
-                <h2 class="c-item__header">Bieg Marduły</h2>
+            <div class="c-item" ng-repeat="item in items">
+                <h2 class="c-item__header">{{item.header}}</h2>
                 <div class="c-item__info">
                     <strong class="c-item__text c-item__text--left">Dystans:</strong>
-                    <span class="c-item__text c-item__text--right">32km</span>
+                    <span class="c-item__text c-item__text--right">{{item.distance}} km</span>
                     <span class="c-item__dots">&nbsp;</span>
                 </div>
-                <div class="c-item__info c-item__info--altitude">
+                <div class="c-item__info">
                     <strong class="c-item__text c-item__text--left">Przewyższenie:</strong>
-                    <span class="c-item__text c-item__text--right">+2205</span>
-                    <span class="c-item__text c-item__text--right">-2205</span>
+                    <span class="c-item__text c-item__text--right">+{{item.up}}</span>
+                    <span class="c-item__text c-item__text--right">-{{item.down}}</span>
                     <span class="c-item__dots">&nbsp;</span>
-                </div>				
+                </div>              
                 <div class="c-item__info c-item__info--price">
                     <strong class="c-item__text c-item__text--left">Cena:</strong>
-                    <span class="c-item__text c-item__text--right">200zł</span>         
-                    <span class="c-item__dots">&nbsp;</span>						
+                    <span class="c-item__text c-item__text--right">{{item.priceMin | currency}}-{{item.priceMax | currency}}</span>         
+                    <span class="c-item__dots">&nbsp;</span>    
                 </div>
                 <div class="c-item__info c-item__info--location">
-                    Zakopane
+                    {{item.location}}
                 </div>
                 <div class="c-item__info c-item__info--date">
-                    <strong>4 czerwiec 2018 - 7:00</strong>
-                </div>	
-                <button class="c-item-button c-item-button--poz-absolute-4">Szczegóły</button>
-                <div class="c-item-details" style="display: none">
+                    <strong>{{item.date | date : 'dd MMMM yyyy h:mm'}}</strong>
+                </div>  
+                <button class="c-item-button c-item-button--poz-absolute-4" ng-click="show = !show">Szczegóły</button>
+                <div class="c-item-details" ng-show="show">
                         <div class="c-item-details__info">
                             <strong>Kategoria biegu:</strong>
-                            <span>Długi</span>					
+                            <span>{{item.category}}</span>                  
                         </div>
                         <div class="c-item-details__info">
                                 <strong>Punkty:</strong>
-                                <span>UTMB - 2</span>	
-                                <span>/</span>	
-                                <span>BUGT - 2</span>			
-                        </div>					
+                                <span ng-show="item.pointsUTMB">UTMB - {{item.pointsUTMB}}</span>   
+                                <span>/</span>  
+                                <span ng-show="item.pointsBUGT">BUGT - {{item.pointsBUGT}}</span>           
+                        </div>                  
                         <div class="c-item-details__info">
                                 <strong>Limit czasu:</strong>
-                                <span>12h</span>					
+                                <span>{{item.timeLimit}}</span>                 
                         </div>
                         <div class="c-item-details__info">
                                 <strong>Limit uczestników:</strong>
-                                <span>350</span>					
+                                <span>{{item.playersLimit}}</span>                  
                         </div>
-                </div>			
-                <a target="_blank" class="c-item-button c-item-button--poz-absolute-3">www</a>
-                <a target="_blank" class="c-item-button c-item-button--poz-absolute-2">Zapisy</a>
+                </div>          
+                <a target="_blank" ng-href="{{item.www}}" class="c-item-button c-item-button--poz-absolute-3">www</a>
+                <a target="_blank" ng-href="{{item.signup}}" class="c-item-button c-item-button--poz-absolute-2">Zapisy</a>
                 <button class="c-item-button c-item-button--poz-absolute-1">Dodaj</button>
-            </div>		
+            </div>
         </section>
     </div>
 </body>
