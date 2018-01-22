@@ -53,10 +53,16 @@
     <link href="css/mr-advanced-filter/_width-130/mr-advanced-filter--width-130.css" rel="stylesheet" type="text/css"/>
     <link href="components/jQuery-MultiSelect-master/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
     <script src="components/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link href="components/@fengyuanchen/datepicker/dist/datepicker.css" rel="stylesheet" type="text/css"/>
+    <script src="components/@fengyuanchen/datepicker/dist/datepicker.js" type="text/javascript"></script>
+    <link href="components/node_modules/angular-moment-picker/dist/angular-moment-picker.min.css" rel="stylesheet" type="text/css"/>
     <script src="components/angular.min.js" type="text/javascript"></script>
     <script src="js/mountainRunning.js" type="text/javascript"></script>
     <script src="controllers/mainPageController.js" type="text/javascript"></script>
     <script src="components/jQuery-MultiSelect-master/jquery.multiselect.js" type="text/javascript"></script>
+    <script src="components/node_modules/moment/moment.js" type="text/javascript"></script>
+    <script src="components/node_modules/moment/locale/pl.js" type="text/javascript"></script>
+    <script src="components/node_modules/angular-moment-picker/dist/angular-moment-picker.min.js" type="text/javascript"></script>
     <script src="js/sample.js" type="text/javascript"></script>
 </head>
 <body ng-app="mountainRunning" ng-controller="mainPageCtrl">
@@ -69,8 +75,22 @@
                 <div class="mr-filters-main">
                     <div class="mr-filter-group">
                         <label class="mr-filter-label" for="start_date">Przedział czasowy</label>
-                        <input class="mr-filter">
-                        <input class="mr-filter">
+                        <input 
+                        moment-picker="mainPageCtrl.min" 
+                        class="mr-filter" 
+                        type="text" 
+                        id="start_date" 
+                        ng-model="min.date" 
+                        format="DD MMM YYYY" 
+                        >
+                        <input 
+                        moment-picker="mainPageCtrl.max" 
+                        class="mr-filter" 
+                        type="text" 
+                        id="end_date" 
+                        ng-model="max.date" 
+                        format="DD MMM YYYY" 
+                        >
                     </div>
                     <div class="mr-filter-group">
                         <label class="mr-filter-label" for="country">Kraj</label>	

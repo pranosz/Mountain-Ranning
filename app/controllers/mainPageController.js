@@ -14,6 +14,11 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
     $scope.showFilters = function() {
         $scope.toggle = !$scope.toggle;  
     };
+    /*
+    * Default date in the date range fields
+    */
+	$scope.min = {date: moment().locale("en")};
+	$scope.max = {date: moment().locale("en").add(12, 'month')};
 	/*
    * Multi select
    */

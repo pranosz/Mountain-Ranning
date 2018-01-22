@@ -1,0 +1,146 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@fengyuanchen/datepicker",
+        "scope": "@fengyuanchen",
+        "escapedName": "@fengyuanchen%2fdatepicker",
+        "name": "@fengyuanchen/datepicker",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "d:\\GUI\\Mountain Ranning\\app"
+    ]
+  ],
+  "_from": "@fengyuanchen/datepicker@latest",
+  "_id": "@fengyuanchen/datepicker@0.6.3",
+  "_inCache": true,
+  "_location": "/@fengyuanchen/datepicker",
+  "_nodeVersion": "8.5.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/datepicker-0.6.3.tgz_1506695808264_0.2430431297980249"
+  },
+  "_npmUser": {
+    "name": "fengyuanchen",
+    "email": "chenfengyuan@outlook.com"
+  },
+  "_npmVersion": "5.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@fengyuanchen/datepicker",
+    "scope": "@fengyuanchen",
+    "escapedName": "@fengyuanchen%2fdatepicker",
+    "name": "@fengyuanchen/datepicker",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@fengyuanchen/datepicker/-/datepicker-0.6.3.tgz",
+  "_shasum": "c82d4a727b01ce1dcf2df393cbc05e2c631b9d77",
+  "_shrinkwrap": null,
+  "_spec": "@fengyuanchen/datepicker",
+  "_where": "d:\\GUI\\Mountain Ranning\\app",
+  "author": {
+    "name": "Fengyuan Chen",
+    "url": "http://chenfengyuan.com"
+  },
+  "browser": "dist/datepicker.js",
+  "bugs": {
+    "url": "https://github.com/fengyuanchen/datepicker/issues"
+  },
+  "dependencies": {},
+  "description": "A simple jQuery datepicker plugin.",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "cpy-cli": "^1.0.1",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-plugin-import": "^2.7.0",
+    "jquery": "^3.2.1",
+    "node-qunit-phantomjs": "^1.5.0",
+    "npm-run-all": "^4.1.1",
+    "postcss": "^6.0.12",
+    "postcss-atrule-bem": "^3.0.1",
+    "postcss-banner": "^3.0.0",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.3.1",
+    "stylefmt": "^6.0.0",
+    "uglify-js": "^3.0.27"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-cvrbO6muqK1xLiLZlx6E+ndWjY1Kk37Vm930f8JX5bCcq/HLeSi3PGVPZ0H2cgYYPuuk/fUTsoo6cIQg0dfv4g==",
+    "shasum": "c82d4a727b01ce1dcf2df393cbc05e2c631b9d77",
+    "tarball": "https://registry.npmjs.org/@fengyuanchen/datepicker/-/datepicker-0.6.3.tgz"
+  },
+  "files": [
+    "src",
+    "dist",
+    "i18n"
+  ],
+  "gitHead": "9b2aa9ae840244a67c7f657e69934fb85877c995",
+  "homepage": "https://github.com/fengyuanchen/datepicker",
+  "keywords": [
+    "date",
+    "picker",
+    "datepicker",
+    "jquery",
+    "plugin",
+    "html",
+    "css",
+    "javascript",
+    "front-end",
+    "web",
+    "development"
+  ],
+  "license": "MIT",
+  "main": "dist/datepicker.common.js",
+  "maintainers": [
+    {
+      "name": "fengyuanchen",
+      "email": "chenfengyuan@outlook.com"
+    }
+  ],
+  "module": "dist/datepicker.esm.js",
+  "name": "@fengyuanchen/datepicker",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengyuanchen/datepicker.git"
+  },
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss src/css/datepicker.css -m -o dist/datepicker.css",
+    "build:js": "rollup -c",
+    "compress": "npm run compress:css && npm run compress:js",
+    "compress:css": "postcss dist/datepicker.css -u cssnano -m -o dist/datepicker.min.css",
+    "compress:js": "uglifyjs dist/datepicker.js -o dist/datepicker.min.js -c -m --comments /^!/",
+    "copy": "npm run copy:css && npm run copy:i18n",
+    "copy:css": "cpy dist/datepicker.css docs/css/",
+    "copy:i18n": "cpy i18n/* docs/js",
+    "lint": "eslint src --fix",
+    "postbuild": "npm test && npm run compress && npm run copy",
+    "prebuild": "npm run lint",
+    "start": "npm-run-all --parallel watch:*",
+    "test": "node-qunit-phantomjs test/index.html --timeout 10",
+    "watch:css": "postcss src/css/datepicker.css -m -o docs/css/datepicker.css -w",
+    "watch:js": "rollup -c -w -m"
+  },
+  "version": "0.6.3"
+}
