@@ -63,6 +63,7 @@
     <script src="components/node_modules/moment/moment.js" type="text/javascript"></script>
     <script src="components/node_modules/moment/locale/pl.js" type="text/javascript"></script>
     <script src="components/node_modules/angular-moment-picker/dist/angular-moment-picker.min.js" type="text/javascript"></script>
+    <script src="filters/customFilters.js" type="text/javascript"></script>
     <script src="js/sample.js" type="text/javascript"></script>
 </head>
 <body ng-app="mountainRunning" ng-controller="mainPageCtrl">
@@ -107,49 +108,49 @@
                     </div>
                 </div>
             </header>
-            <div id="filters-advanced" ng-show="toggle" class="mr-filters-advanced">
+        <div id="filters-advanced" ng-show="toggle" class="mr-filters-advanced">
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_name">Nazwa</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="c_name">
+                    <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="c_name" data-ng-model="cName">
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_price_min">Cena</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_min" placeholder="min">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_max" placeholder="max">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_min" placeholder="min" data-ng-model="min.price">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_max" placeholder="max" data-ng-model="max.price">
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_distance_min">Dystans</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_min" placeholder="min">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_max" placeholder="max">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_min" placeholder="min" data-ng-model="min.distance">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_max" placeholder="max" data-ng-model="max.distance">
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_altitude_min">Przewyższenie</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_min" placeholder="min">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_max" placeholder="max">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_min" placeholder="min" data-ng-model="min.altitude">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_max" placeholder="max" data-ng-model="max.altitude">
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
                     <select multiple="multiple" type="text" id="category" name="category" data-ng-model="selectCategory">
-                            <option selected value="alpejski">Alpejski</option>
-                            <option selected value="anglosaski">Anglosaski</option>
-                            <option selected value="długi">Długi</option>
-                            <option selected value="ultra">Ultra</option>
+                        <option selected value="alpejski">Alpejski</option>
+                        <option selected value="anglosaski">Anglosaski</option>
+                        <option selected value="długi">Długi</option>
+                        <option selected value="ultra">Ultra</option>
                     </select>
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_points_min">Punkty UTMB</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min" data-ng-model="min.pointsUTMB">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max" data-ng-model="max.pointsUTMB">
                 </div>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="c_points_min">Punkty BUGT</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min" data-ng-model="min.pointsBUGT">
+                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max" data-ng-model="max.pointsBUGT">
                 </div>
             </div>
         </form>
         <section class="c-container">
-            <div class="c-item" ng-repeat="item in items">
+            <div class="c-item" ng-repeat="item in items | multiSelectFilter:selectCountry:'country' | filter:{header:cName} | rangeFilter:min:max | multiSelectFilter:selectCategory:'category'">
                 <h2 class="c-item__header">{{item.header}}</h2>
                 <div class="c-item__info">
                     <strong class="c-item__text c-item__text--left">Dystans:</strong>

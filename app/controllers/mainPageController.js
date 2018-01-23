@@ -3,10 +3,9 @@
 */
 mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 
-	/*
-	$scope.selectCountry = ["poland","austria","croatia","słowacja"];
+	$scope.selectCountry = ["polska","austria","croatia","słowacja"];
     $scope.selectCategory = ["alpejski","anglosaski","długi","ultra"];
-    */
+
     /*
     * Hide / show additional filters
     */
