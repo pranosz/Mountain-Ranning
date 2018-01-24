@@ -1,8 +1,8 @@
 /*
 * Main module - mountainRunning
 */
-var mrApp = angular.module('mountainRunning', ["moment-picker","customFilters"]);
-mrApp.config(['momentPickerProvider', function (momentPickerProvider) {
+var mrApp = angular.module("mountainRunning",["ngRoute","moment-picker","customFilters"]);
+mrApp.config(["$routeProvider","$locationProvider",'momentPickerProvider', function ($routeProvider, $locationProvider, momentPickerProvider) {
         momentPickerProvider.options({
             /* Picker properties */
             format:        'L LTS',
@@ -21,5 +21,10 @@ mrApp.config(['momentPickerProvider', function (momentPickerProvider) {
             daysFormat:    'D',
         });
     
+        $routeProvider
+            .when("/competitions",{
+                templateUrl: "views/competitions.html"
+        })
+        .otherwise({redirectTo:"/competitions"});
        // $locationProvider.html5Mode(true).hashPrefix('!');
 }]);

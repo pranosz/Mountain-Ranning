@@ -1,0 +1,50 @@
+<div class="c-item" ng-repeat="item in items | multiSelectFilter:selectCountry:'country' | filter:{header:cName} | rangeFilter:min:max | multiSelectFilter:selectCategory:'category'">
+    <h2 class="c-item__header">{{item.header}}</h2>
+    <div class="c-item__info">
+        <strong class="c-item__text c-item__text--left">Dystans:</strong>
+        <span class="c-item__text c-item__text--right">{{item.distance}} km</span>
+        <span class="c-item__dots">&nbsp;</span>
+    </div>
+    <div class="c-item__info">
+        <strong class="c-item__text c-item__text--left">Przewyższenie:</strong>
+        <span class="c-item__text c-item__text--right">+{{item.up}}</span>
+        <span class="c-item__text c-item__text--right">-{{item.down}}</span>
+        <span class="c-item__dots">&nbsp;</span>
+    </div>				
+    <div class="c-item__info c-item__info--price">
+        <strong class="c-item__text c-item__text--left">Cena:</strong>
+        <span class="c-item__text c-item__text--right">{{item.priceMin | currency}}-{{item.priceMax | currency}}</span>			
+        <span class="c-item__dots">&nbsp;</span>	
+    </div>
+    <div class="c-item__info c-item__info--location">
+        {{item.location}}
+    </div>
+    <div class="c-item__info c-item__info--date">
+        <strong>{{item.date | date : 'dd MMMM yyyy h:mm'}}</strong>
+    </div>	
+    <button class="c-item-button c-item-button--poz-absolute-4" ng-click="show = !show">Szczegóły</button>
+    <div class="c-item-details" ng-show="show">
+            <div class="c-item-details__info">
+                <strong>Kategoria biegu:</strong>
+                <span>{{item.category}}</span>					
+            </div>
+            <div class="c-item-details__info">
+                    <strong>Punkty:</strong>
+                    <span ng-show="item.pointsUTMB">UTMB - {{item.pointsUTMB}}</span>	
+                    <span>/</span>	
+                    <span ng-show="item.pointsBUGT">BUGT - {{item.pointsBUGT}}</span>			
+            </div>					
+            <div class="c-item-details__info">
+                    <strong>Limit czasu:</strong>
+                    <span>{{item.timeLimit}}</span>					
+            </div>
+            <div class="c-item-details__info">
+                    <strong>Limit uczestników:</strong>
+                    <span>{{item.playersLimit}}</span>					
+            </div>
+    </div>			
+    <a target="_blank" ng-href="{{item.www}}" class="c-item-button c-item-button--poz-absolute-3">www</a>
+    <a target="_blank" ng-href="{{item.signup}}" class="c-item-button c-item-button--poz-absolute-2">Zapisy</a>
+    <button class="c-item-button c-item-button--poz-absolute-1">Dodaj</button>
+</div>	
+<paging pages="pagesToShow" current-page="currentPage" page-size="5"></paging>

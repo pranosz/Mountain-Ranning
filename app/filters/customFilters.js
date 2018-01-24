@@ -51,13 +51,18 @@ angular.module("customFilters",[])
 		return filtered;
 	}
 })
+/*
+* 	multiSelectFilter
+*	@param {array} items / contains objects. Each object represents single competition.
+*	@param {array} arr / conatains choosen values {string}.
+*	@param {string} propName / name of multiselect list.   
+*/
 .filter("multiSelectFilter",function(){
 	return function(items,arr,propName){
 		if(angular.isDefined(arr)){
-			console.log(propName);
 			var filtered = [];
 			angular.forEach(items, function(item){
-				console.log(item[propName].toLowerCase());
+				//console.log(item[propName].toLowerCase());
 	    		var found = arr.indexOf(item[propName].toLowerCase());
 	    		if(found !== -1){
 	    			filtered.push(item);

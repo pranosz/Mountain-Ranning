@@ -3,7 +3,16 @@
 */
 mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 
-	$scope.selectCountry = ["polska","austria","croatia","słowacja"];
+	/*
+	* This data are used in filter (multiSelectFilter) and represents
+	* value attribute of each option.
+ 	* It's a default sets whitch have influance only for 
+ 	* the filter when the page is loaded for the first time. 
+ 	* After that the data are loaded to the filter from multiselect dropdown list. 
+ 	* If you want for example to unselect one of the option, you must remove correct  
+ 	* data from array and cancel "selected" attribute in proper option. 
+	*/
+	$scope.selectCountry = ["poland","austria","croatia","slovakia"];
     $scope.selectCategory = ["alpejski","anglosaski","długi","ultra"];
 
     /*
@@ -19,8 +28,8 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 	$scope.min = {date: moment().locale("en")};
 	$scope.max = {date: moment().locale("en").add(12, 'month')};
 	/*
-   * Multi select
-   */
+   	* Multi select setup
+   	*/
     $('#country').multiselect({
         selectAll: true,
         minHeight: null,
@@ -76,7 +85,7 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 					pointsBUGT:0,
 					timeLimit:7,
 					playersLimit:350,
-					country:"Polska",
+					country:"Poland",
 					www:"http://www.wp.pl",
 					signup:"http://www.wp.pl/poczta"
 				}
