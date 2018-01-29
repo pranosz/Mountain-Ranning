@@ -48,6 +48,36 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
             search     : 'Search States'
         }
     });
+    /*
+    *
+    */
+	$scope.items = {};
+    $scope.itemsNum = 0;
+    $scope.currentPage = 1;
+    $scope.pageSize = 2;
+    $scope.filtered = [];
+    $scope.pagesToShow = [];
+
+    var _calculatePages = function(){
+		var temp = []; 
+		console.log("filtered.length "+$scope.filtered.length);
+		console.log("pageSize "+$scope.pageSize);
+		if($scope.filtered.length>1){
+			for(var i=0;i<(Math.ceil($scope.filtered.length/$scope.pageSize));i++){
+				temp.push({
+					name: i+1,
+					num: i+1,
+				}); 
+			}
+		}
+		return temp;
+	};
+	$scope.pagesToShow = _calculatePages();
+
+	$scope.$watch("items | multiSelectFilter:selectCountry:'country' | filter:{header:cName} | rangeFilter:min:max | multiSelectFilter:selectCategory:'category'", function(newVal) {
+    	$scope.filtered = newVal;
+    	$scope.pagesToShow = _calculatePages();
+    }, true);
 
     /*
     * Temp data
@@ -85,6 +115,60 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 					pointsBUGT:0,
 					timeLimit:7,
 					playersLimit:350,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Biegi w Szczawnicy: Durbaszka",
+					distance:20,
+					up:800,
+					down:800,
+					priceMin:30,
+					priceMax:150,
+					location:"Krościenko nad Dunajcem",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:7,
+					playersLimit:350,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Biegi w Szczawnicy: Hardy Roling",
+					distance:7,
+					up:400,
+					down:400,
+					priceMin:20,
+					priceMax:100,
+					location:"Krościenko nad Dunajcem",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:2,
+					playersLimit:330,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"XRUN: Mogielica",
+					distance:32,
+					up:1400,
+					down:1400,
+					priceMin:40,
+					priceMax:80,
+					location:"Jurków",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:5,
+					playersLimit:300,
 					country:"Poland",
 					www:"http://www.wp.pl",
 					signup:"http://www.wp.pl/poczta"

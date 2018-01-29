@@ -72,3 +72,28 @@ angular.module("customFilters",[])
 		}
 	}
 })
+/*
+*	paging
+*	@param {array} items / contains objects. Each object represents single competition.
+*	@param {currentPage} currentPage / 
+*	@param {currentPage} pageSize / 
+*/
+.filter("paging",function($filter){
+	return function(items, currentPage, pageSize){
+		var filtered = [];
+		if(!angular.isArray(items) || currentPage >= pageSize){
+			return items;
+		}
+		var startPage = (currentPage-1)*pageSize;
+		/*
+		*	$filter('limitTo')(input, limit, begin)
+		*	
+		*/
+		//console.log("items!!!!!");
+		//console.log(items);
+		console.log("startPage "+startPage);
+		filtered = $filter("limitTo")(items.slice(startPage),pageSize);
+		console.log("filtered "+filtered);
+		return filtered;
+	}
+})

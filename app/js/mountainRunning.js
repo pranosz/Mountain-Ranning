@@ -1,7 +1,7 @@
 /*
 * Main module - mountainRunning
 */
-var mrApp = angular.module("mountainRunning",["ngRoute","moment-picker","customFilters"]);
+var mrApp = angular.module("mountainRunning",["ngRoute","moment-picker","pagingModule","customFilters"]);
 mrApp.config(["$routeProvider","$locationProvider",'momentPickerProvider', function ($routeProvider, $locationProvider, momentPickerProvider) {
         momentPickerProvider.options({
             /* Picker properties */
