@@ -75,8 +75,8 @@ angular.module("customFilters",[])
 /*
 *	paging
 *	@param {array} items / contains objects. Each object represents single competition.
-*	@param {currentPage} currentPage / 
-*	@param {currentPage} pageSize / 
+*	@param {number} currentPage / currently selected page.
+*	@param {number} pageSize / how many items(competition) are shown per page.
 */
 .filter("paging",function($filter){
 	return function(items, currentPage, pageSize){
@@ -85,15 +85,7 @@ angular.module("customFilters",[])
 			return items;
 		}
 		var startPage = (currentPage-1)*pageSize;
-		/*
-		*	$filter('limitTo')(input, limit, begin)
-		*	
-		*/
-		//console.log("items!!!!!");
-		//console.log(items);
-		console.log("startPage "+startPage);
 		filtered = $filter("limitTo")(items.slice(startPage),pageSize);
-		console.log("filtered "+filtered);
 		return filtered;
 	}
 })

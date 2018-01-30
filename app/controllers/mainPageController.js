@@ -49,19 +49,24 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
         }
     });
     /*
-    *
+    *	items / contains competition objects.
+    *	currentPage / default current page set. 
+    *	pageSize / how many items(competition) are shown per page. Default set. 
+    *	filtered / contains filtered items(competition).
+    *	numOfPages / number of pages.	  
     */
 	$scope.items = {};
-    $scope.itemsNum = 0;
     $scope.currentPage = 1;
-    $scope.pageSize = 2;
+    $scope.pageSize = 5;
     $scope.filtered = [];
-    $scope.pagesToShow = [];
+    $scope.numOfPages = [];
 
+    /*
+    *	_calculatePages / calculates how many pages we will get, using pageSize parameter.
+    *					  This calculation are do on filtered array.  
+    */
     var _calculatePages = function(){
 		var temp = []; 
-		console.log("filtered.length "+$scope.filtered.length);
-		console.log("pageSize "+$scope.pageSize);
 		if($scope.filtered.length>1){
 			for(var i=0;i<(Math.ceil($scope.filtered.length/$scope.pageSize));i++){
 				temp.push({
@@ -72,11 +77,15 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 		}
 		return temp;
 	};
-	$scope.pagesToShow = _calculatePages();
+	$scope.numOfPages = _calculatePages();
 
+	/*
+	*	This functionality automatically update filtered array when items are filtered 
+	*	and calls _calculatePages function to update number of pages.
+	*/
 	$scope.$watch("items | multiSelectFilter:selectCountry:'country' | filter:{header:cName} | rangeFilter:min:max | multiSelectFilter:selectCategory:'category'", function(newVal) {
     	$scope.filtered = newVal;
-    	$scope.pagesToShow = _calculatePages();
+    	$scope.numOfPages = _calculatePages();
     }, true);
 
     /*
@@ -163,6 +172,78 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 					priceMin:40,
 					priceMax:80,
 					location:"Jurków",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:5,
+					playersLimit:300,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Bieg 101",
+					distance:101,
+					up:1400,
+					down:1400,
+					priceMin:40,
+					priceMax:80,
+					location:"Jurków",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:5,
+					playersLimit:300,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Bieg 7",
+					distance:7,
+					up:1400,
+					down:1400,
+					priceMin:40,
+					priceMax:80,
+					location:"Jurków",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:5,
+					playersLimit:300,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Bieg 17",
+					distance:17,
+					up:1400,
+					down:1400,
+					priceMin:40,
+					priceMax:80,
+					location:"Jurków",
+					date:1522738800000,
+					category:"długi",
+					pointsUTMB:0,
+					pointsBUGT:0,
+					timeLimit:5,
+					playersLimit:300,
+					country:"Poland",
+					www:"http://www.wp.pl",
+					signup:"http://www.wp.pl/poczta"
+				},
+				{
+					header:"Bieg 10",
+					distance:10,
+					up:100,
+					down:100,
+					priceMin:10,
+					priceMax:20,
+					location:"Kraków",
 					date:1522738800000,
 					category:"długi",
 					pointsUTMB:0,

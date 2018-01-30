@@ -5,7 +5,6 @@
 			link: function ($scope, $iElement, $iAttrs) {
 				$scope.setPage = function(pageNum){
 					$scope.currentPage = pageNum;
-					console.log("pageNum "+pageNum);
 				}
 			},
 			template: function(iElement,iAttrs){
