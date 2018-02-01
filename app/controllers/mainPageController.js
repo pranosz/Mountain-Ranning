@@ -1,7 +1,7 @@
 /*
 * mainPageController 
 */
-mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
+mrApp.controller('mainPageCtrl', ['$scope', function ($scope,competitions) {
 
 	/*
 	* This data are used in filter (multiSelectFilter) and represents
@@ -88,9 +88,15 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
     	$scope.numOfPages = _calculatePages();
     }, true);
 
+
+    competitions.getCompetitions(function(competitions){
+    	$scope.items = competitions.data;
+    });
+
     /*
     * Temp data
     */
+    /*
 	$scope.items = [
 				{
 					header:"Bieg im. Franciszka Marduły",
@@ -254,6 +260,6 @@ mrApp.controller('mainPageCtrl', ['$scope', function ($scope) {
 					www:"http://www.wp.pl",
 					signup:"http://www.wp.pl/poczta"
 				}
-			];
+			];*/
 	
 }])
