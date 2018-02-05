@@ -2,8 +2,8 @@
   /*
 	 * Temporary code 
 	 */
-	 $("#btn-more-filters").click(function(){
-	 	  $("#filters-advanced").toggle();
+	 $("#btn-details").click(function(){
+	 	  $("#item-details-1").toggle();
 	 });
 
 });

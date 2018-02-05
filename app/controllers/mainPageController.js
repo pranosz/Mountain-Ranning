@@ -1,7 +1,7 @@
 /*
 * mainPageController 
 */
-mrApp.controller('mainPageCtrl', ['$scope', function ($scope,competitions) {
+mrApp.controller('mainPageCtrl', ['$scope', 'competitions', function ($scope,competitions) {
 
 	/*
 	* This data are used in filter (multiSelectFilter) and represents
