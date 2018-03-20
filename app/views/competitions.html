@@ -1,4 +1,4 @@
-<div class="c-item" ng-repeat="item in filtered | paging:currentPage:pageSize">
+<article class="c-item" ng-repeat="item in filtered | paging:currentPage:pageSize">
     <h2 class="c-item__header">{{item.header}}</h2>
     <div class="c-item__info">
         <strong class="c-item__text c-item__text--left">Dystans:</strong>
@@ -46,5 +46,5 @@
     <a target="_blank" ng-href="{{item.www}}" class="c-item-button c-item-button--poz-absolute-3">www</a>
     <a target="_blank" ng-href="{{item.signup}}" class="c-item-button c-item-button--poz-absolute-2">Zapisy</a>
     <button class="c-item-button c-item-button--poz-absolute-1">Dodaj</button>
-</div>	
+</article>	
 <paging pages="numOfPages" current-page="currentPage"></paging>

@@ -1,10 +1,12 @@
 .mr-filter-label {
 	display: inline;
-	height: 30px;
+	height: 56px;
+	line-height: 56px;
 	font-size: 1.4em;
 	color: #d8dfec;
 	margin-left: 10px;
-	padding: 3px;
+	padding: 0px 3px;
+	float: left;
 }
 
 @media screen and (min-width: 770px) and (max-width: 989px){

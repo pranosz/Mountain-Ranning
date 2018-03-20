@@ -8,6 +8,7 @@
     <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="css/web-wrap/web-wrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/utils.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-header/mr-header.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-logo/mr-logo.css" rel="stylesheet" type="text/css"/>
     <link href="css/mr-filters-main/mr-filters-main.css" rel="stylesheet" type="text/css"/>
@@ -85,8 +86,9 @@
                     <h1>Biegi Górskie</h1>
                 </div>
                 <div class="mr-filters-main">
-                    <div class="mr-filter-group">
-                        <label class="mr-filter-label" for="start_date">Przedział czasowy</label>
+                    <fieldset class="mr-filter-group">
+                        <legend class="mr-filter-label">Przedział czasowy</legend>
+                        <label class="visually-hidden" for="start_date" aria-label="Wybierz datę początkową - pole nie jest obowiązkowe"></label>
                         <input 
                         moment-picker="mainPageCtrl.min" 
                         class="mr-filter" 
@@ -95,6 +97,7 @@
                         ng-model="min.date" 
                         format="DD MMM YYYY" 
                         >
+                        <label class="visually-hidden" for="end_date" aria-label="Wybierz datę końcową - pole nie jest obowiązkowe">Przedział czasowy</label>
                         <input 
                         moment-picker="mainPageCtrl.max" 
                         class="mr-filter" 
@@ -103,7 +106,7 @@
                         ng-model="max.date" 
                         format="DD MMM YYYY" 
                         >
-                    </div>
+                    </fieldset>
                     <div class="mr-filter-group">
                         <label class="mr-filter-label" for="country">Kraj</label>	
                         <select multiple="multiple" id="country" name="country" data-ng-model="selectCountry">
@@ -121,24 +124,30 @@
             </header>
         <div id="filters-advanced" ng-show="toggle" class="mr-filters-advanced">
                 <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_name">Nazwa</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="c_name" data-ng-model="cName">
+                    <label class="mr-advanced-filter-label" for="name">Nazwa</label>
+                    <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="name" data-ng-model="cName">
                 </div>
-                <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_price_min">Cena</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_min" placeholder="min" data-ng-model="min.price">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_price_max" placeholder="max" data-ng-model="max.price">
-                </div>
-                <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_distance_min">Dystans</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_min" placeholder="min" data-ng-model="min.distance">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_distance_max" placeholder="max" data-ng-model="max.distance">
-                </div>
-                <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_altitude_min">Przewyższenie</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_min" placeholder="min" data-ng-model="min.altitude">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_altitude_max" placeholder="max" data-ng-model="max.altitude">
-                </div>
+                    <fieldset class="mr-advanced-filter-group">
+                        <legend class="mr-advanced-filter-label">Cena</legend>
+                        <label class="visually-hidden" for="price_min">Minimalna</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="price_min" placeholder="min" data-ng-model="min.price">
+                        <label class="visually-hidden" for="price_max">Maxymalna</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="price_max" placeholder="max" data-ng-model="max.price">
+                    </fieldset>
+                    <fieldset class="mr-advanced-filter-group"> 
+                        <legend class="mr-advanced-filter-label">Dystans</legend>
+                        <label class="visually-hidden" for="distance_min">Minimalny</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="distance_min" placeholder="min" data-ng-model="min.distance">
+                        <label class="visually-hidden" for="distance_max">Maksymalny</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="distance_max" placeholder="max" data-ng-model="max.distance">
+                    </fieldset>
+                    <fieldset class="mr-advanced-filter-group">
+                        <legend class="mr-advanced-filter-label">Przewyższenie</legend>
+                        <label class="visually-hidden" for="altitude_min">Minimalne</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="altitude_min" placeholder="min" data-ng-model="min.altitude">
+                        <label class="visually-hidden" for="altitude_max">Maksymalne</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="altitude_max" placeholder="max" data-ng-model="max.altitude">
+                    </fieldset>
                 <div class="mr-advanced-filter-group">
                     <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
                     <select multiple="multiple" type="text" id="category" name="category" data-ng-model="selectCategory">
@@ -148,16 +157,20 @@
                         <option selected value="ultra">Ultra</option>
                     </select>
                 </div>
-                <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_points_min">Punkty UTMB</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min" data-ng-model="min.pointsUTMB">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max" data-ng-model="max.pointsUTMB">
-                </div>
-                <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="c_points_min">Punkty BUGT</label>
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_min" placeholder="min" data-ng-model="min.pointsBUGT">
-                    <input class="mr-advanced-filter mr-advanced-filter--half-width" type="text" id="c_points_max" placeholder="max" data-ng-model="max.pointsBUGT">
-                </div>
+                    <fieldset class="mr-advanced-filter-group">
+                        <legend class="mr-advanced-filter-label">Punkty UTMB</legend>
+                        <label class="visually-hidden" for="utmb_points_min">Minimum</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="utmb_points_min" placeholder="min" data-ng-model="min.pointsUTMB">
+                        <label class="visually-hidden" for="utmb_points_max">Maksimum</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="utmb_points_max" placeholder="max" data-ng-model="max.pointsUTMB">
+                    </fieldset>
+                    <fieldset class="mr-advanced-filter-group">
+                        <legend class="mr-advanced-filter-label">Punkty BUGT</legend>
+                        <label class="visually-hidden" for="bugt_points_min">Minimum</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="bugt_points_min" placeholder="min" data-ng-model="min.pointsBUGT">
+                        <label class="visually-hidden" for="bugt_points_max">Maksimum</label>
+                        <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="bugt_points_max" placeholder="max" data-ng-model="max.pointsBUGT">
+                    </fieldset>
             </div>
         </form>
         <section class="c-container" ng-view>
