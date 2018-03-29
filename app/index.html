@@ -108,7 +108,7 @@
                         >
                     </fieldset>
                     <div class="mr-filter-group">
-                        <label class="mr-filter-label" for="country">Kraj</label>	
+                        <label class="mr-filter-label" aria-labelledby="Wybierz kraj (jeden lub więcej)" for="country">Kraj</label>	
                         <select multiple="multiple" id="country" name="country" data-ng-model="selectCountry">
                             <option selected value="poland">Polska</option>
                             <option selected value="austria">Austria</option>
@@ -124,32 +124,32 @@
             </header>
         <div id="filters-advanced" ng-show="toggle" class="mr-filters-advanced">
                 <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="name">Nazwa</label>
+                    <label class="mr-advanced-filter-label" aria-labelledby="Podaj nazwę biegu - pole nie jest obowiązkowe" for="name">Nazwa</label>
                     <input class="mr-advanced-filter mr-advanced-filter--width-130" type="text" id="name" data-ng-model="cName">
                 </div>
                     <fieldset class="mr-advanced-filter-group">
                         <legend class="mr-advanced-filter-label">Cena</legend>
-                        <label class="visually-hidden" for="price_min">Minimalna</label>
+                        <label class="visually-hidden" aria-label="Podaj cenę minimalną - pole nie jest obowiązkowe" for="price_min">Minimalna</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="price_min" placeholder="min" data-ng-model="min.price">
-                        <label class="visually-hidden" for="price_max">Maxymalna</label>
+                        <label class="visually-hidden" aria-label="Podaj cenę maksymalną - pole nie jest obowiązkowe" for="price_max">Maxymalna</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="price_max" placeholder="max" data-ng-model="max.price">
                     </fieldset>
                     <fieldset class="mr-advanced-filter-group"> 
                         <legend class="mr-advanced-filter-label">Dystans</legend>
-                        <label class="visually-hidden" for="distance_min">Minimalny</label>
+                        <label class="visually-hidden" aria-label="Podaj minimalny dystans - pole nie jest obowiązkowe" for="distance_min">Minimalny</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="distance_min" placeholder="min" data-ng-model="min.distance">
-                        <label class="visually-hidden" for="distance_max">Maksymalny</label>
+                        <label class="visually-hidden" aria-label="Podaj maksymalny dystans - pole nie jest obowiązkowe" for="distance_max">Maksymalny</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="distance_max" placeholder="max" data-ng-model="max.distance">
                     </fieldset>
                     <fieldset class="mr-advanced-filter-group">
                         <legend class="mr-advanced-filter-label">Przewyższenie</legend>
-                        <label class="visually-hidden" for="altitude_min">Minimalne</label>
+                        <label class="visually-hidden" aria-label="Podaj minimalne przewyższenie - pole nie jest obowiązkowe" for="altitude_min">Minimalne</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="altitude_min" placeholder="min" data-ng-model="min.altitude">
-                        <label class="visually-hidden" for="altitude_max">Maksymalne</label>
+                        <label class="visually-hidden" aria-label="Podaj maksymalne przewyższenie - pole nie jest obowiązkowe" for="altitude_max">Maksymalne</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="altitude_max" placeholder="max" data-ng-model="max.altitude">
                     </fieldset>
                 <div class="mr-advanced-filter-group">
-                    <label class="mr-advanced-filter-label" for="category">Kategoria biegu</label>
+                    <label class="mr-advanced-filter-label" aria-labelledby="Wybierz rodzaj biegu (jeden lub więcej)" for="category">Kategoria biegu</label>
                     <select multiple="multiple" type="text" id="category" name="category" data-ng-model="selectCategory">
                         <option selected value="alpejski">Alpejski</option>
                         <option selected value="anglosaski">Anglosaski</option>
@@ -159,16 +159,16 @@
                 </div>
                     <fieldset class="mr-advanced-filter-group">
                         <legend class="mr-advanced-filter-label">Punkty UTMB</legend>
-                        <label class="visually-hidden" for="utmb_points_min">Minimum</label>
+                        <label class="visually-hidden" aria-label="Podaj minimalną ilość punktów UTMB do zdobycia w biegu - pole nie jest obowiązkowe" for="utmb_points_min">Minimum</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="utmb_points_min" placeholder="min" data-ng-model="min.pointsUTMB">
-                        <label class="visually-hidden" for="utmb_points_max">Maksimum</label>
+                        <label class="visually-hidden" aria-label="Podaj maksymalną ilość punktów UTMB do zdobycia w biegu - pole nie jest obowiązkowe" for="utmb_points_max">Maksimum</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="utmb_points_max" placeholder="max" data-ng-model="max.pointsUTMB">
                     </fieldset>
                     <fieldset class="mr-advanced-filter-group">
                         <legend class="mr-advanced-filter-label">Punkty BUGT</legend>
-                        <label class="visually-hidden" for="bugt_points_min">Minimum</label>
+                        <label class="visually-hidden" aria-label="Podaj minimalną ilość punktów BUGT do zdobycia w biegu - pole nie jest obowiązkowe" for="bugt_points_min">Minimum</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="bugt_points_min" placeholder="min" data-ng-model="min.pointsBUGT">
-                        <label class="visually-hidden" for="bugt_points_max">Maksimum</label>
+                        <label class="visually-hidden" aria-label="Podaj maksymalną ilość punktów BUGT do zdobycia w biegu - pole nie jest obowiązkowe" for="bugt_points_max">Maksimum</label>
                         <input class="mr-advanced-filter mr-advanced-filter--half-width" type="number" id="bugt_points_max" placeholder="max" data-ng-model="max.pointsBUGT">
                     </fieldset>
             </div>
